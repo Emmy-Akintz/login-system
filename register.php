@@ -1,6 +1,6 @@
 <?php if (isset($_POST['register'])) {
     // connect to the database
-    $mysqli = new mysqli("localhost", "username", "password", "login_system");
+    $mysqli = new mysqli("localhost", "username", "password", "login-system");
 
     // check for errors
     if ($mysqli->connect_error)  { die("Connection failed: " . $mysqli->connect_error); }
@@ -19,6 +19,7 @@
 
     // Close the connection
     $stmt->close(); $mysqli->close(); }
+?>
 
 <form action="register.php" method="post">
     <label for="username">Username: </label>
