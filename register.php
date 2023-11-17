@@ -1,4 +1,5 @@
 <?php if (isset($_POST['register'])) {
+
             // connect to the database
             $mysqli = new mysqli("localhost", "username", "password", "login_system");
 
