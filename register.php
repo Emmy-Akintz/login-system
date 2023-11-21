@@ -18,7 +18,7 @@ if (isset($_POST['register'])) {
 
             // Hash the password
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $password = mysqli_escape_['password'];
+            // $password = ['password'];
 
             // Execute the SQL statement
             if ($stmt->execute()) { echo "New account created successfully!"; } else { echo "Error: " . $stmt->error; }
