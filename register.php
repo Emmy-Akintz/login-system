@@ -1,11 +1,13 @@
-<?php if (isset($_POST['register'])) {
+<?php 
+
+if (isset($_POST['register'])) {
 
             // connect to the database
-            $mysqli = new mysqli("localhost", "username", "password", "login_system");
+            $mysqli = mysqli_connect("localhost", "emmanuel", "test123", "login_system");
 
             // check for errors
-            if ($mysqli->connect_error)  {
-                die("Connection failed: " . $mysqli->connect_error); 
+            if ($mysqli)  {
+                echo "connection was successful"; 
             }
 
             // prepare and bind the SQL statement
@@ -16,13 +18,14 @@
 
             // Hash the password
             $password = password_hash($password, PASSWORD_DEFAULT);
+            $password = mysqli_escape_['password'];
 
             // Execute the SQL statement
             if ($stmt->execute()) { echo "New account created successfully!"; } else { echo "Error: " . $stmt->error; }
 
             // Close the connection
             $stmt->close(); $mysqli->close(); }
-        ?>
+?>
 
 <!DOCTYPE html>
 
